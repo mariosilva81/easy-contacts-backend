@@ -26,15 +26,19 @@ export class CreateClientDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(8)
-  @MaxLength(50)
   @IsNotEmpty()
-  @Matches(
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]+$/,
-    {
-      message:
-        'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.',
-    },
-  )
+  @Matches(/^(?=.*[a-z])/, {
+    message: 'Password must contain at least one lowercase letter.',
+  })
+  @Matches(/^(?=.*[A-Z])/, {
+    message: 'Password must contain at least one uppercase letter.',
+  })
+  @Matches(/^(?=.*\d)/, {
+    message: 'Password must contain at least one number.',
+  })
+  @Matches(/^(?=.*[!@#$%^&*()_+])/, {
+    message: 'Password must contain at least one special character.',
+  })
   @Transform(({ value }: { value: string }) => hashSync(value), {
     groups: ['transform'],
   })

@@ -1,4 +1,8 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateClientDto } from './dto/create-client.dto';
 import { UpdateClientDto } from './dto/update-client.dto';
 import { PrismaService } from 'src/database/prisma.service';
@@ -10,11 +14,11 @@ export class ClientsService {
   constructor(private prisma: PrismaService) {}
 
   async create(createClientDto: CreateClientDto) {
-    const findUser = this.prisma.client.findFirst({
+    const findClient = await this.prisma.client.findFirst({
       where: { email: createClientDto.email },
     });
 
-    if (findUser) {
+    if (findClient) {
       throw new ConflictException('Client already exists.');
     }
 
@@ -32,18 +36,51 @@ export class ClientsService {
   }
 
   async findAll() {
-    return `This action returns all clients`;
+    const clients = await this.prisma.client.findMany();
+
+    return plainToInstance(Client, clients);
   }
 
   async findOne(id: string) {
-    return `This action returns a #${id} client`;
+    const findClient = await this.prisma.client.findUnique({
+      where: { id },
+    });
+
+    if (!findClient) {
+      throw new NotFoundException('Client does not exists.');
+    }
+
+    return plainToInstance(Client, findClient);
   }
 
   async update(id: string, updateClientDto: UpdateClientDto) {
-    return `This action updates a #${id} client`;
+    const findClient = await this.prisma.client.findUnique({
+      where: { id },
+    });
+
+    if (!findClient) {
+      throw new NotFoundException('Client does not exists.');
+    }
+
+    const updatedClient = await this.prisma.client.update({
+      where: { id },
+      data: { ...updateClientDto },
+    });
+
+    return plainToInstance(Client, updatedClient);
   }
 
   async remove(id: string) {
-    return `This action removes a #${id} client`;
+    const findClient = await this.prisma.client.findUnique({
+      where: { id },
+    });
+
+    if (!findClient) {
+      throw new NotFoundException('Client does not exists.');
+    }
+
+    await this.prisma.client.delete({
+      where: { id },
+    });
   }
 }
