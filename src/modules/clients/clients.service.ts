@@ -62,6 +62,16 @@ export class ClientsService {
       throw new NotFoundException('Client does not exists.');
     }
 
+    const emailExists = await this.prisma.client.findFirst({
+      where: { email: updateClientDto.email },
+    });
+
+    if (emailExists) {
+      throw new ConflictException(
+        'E-mail already registered for another client.',
+      );
+    }
+
     const updatedClient = await this.prisma.client.update({
       where: { id },
       data: { ...updateClientDto },
