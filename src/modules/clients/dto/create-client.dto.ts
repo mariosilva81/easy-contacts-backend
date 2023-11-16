@@ -1,6 +1,6 @@
 export class CreateClientDto {
-  completeName: string;
+  fullName: string;
+  email: string;
   password: string;
   phone: string;
-  registrationDate: string;
 }

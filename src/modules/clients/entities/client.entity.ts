@@ -2,10 +2,12 @@ import { randomUUID } from 'node:crypto';
 
 export class Client {
   readonly id: string;
-  completeName: string;
+  fullName: string;
+  email: string;
   password: string;
   phone: string;
-  registrationDate: string;
+  createdAt: string;
+  updatedAt: string;
 
   constructor() {
     this.id = randomUUID();

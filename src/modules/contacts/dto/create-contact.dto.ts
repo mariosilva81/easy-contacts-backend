@@ -1,5 +1,5 @@
 export class CreateContactDto {
-  completeName: string;
+  fullName: string;
+  email: string;
   phone: string;
-  registrationDate: string;
 }
