@@ -3,11 +3,11 @@ import { randomUUID } from 'node:crypto';
 
 export class Client {
   readonly id: string;
-  fullName!: string;
+  full_name!: string;
   email!: string;
   phone!: string;
-  createdAt!: string;
-  updatedAt!: string;
+  created_at!: string;
+  updated_at!: string;
 
   @Exclude()
   password!: string;

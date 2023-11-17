@@ -6,7 +6,7 @@ import { CreateSessionDto } from './dto/create-session.dto';
 export class SessionController {
   constructor(private readonly sessionService: SessionService) {}
 
-  @Post()
+  @Post('login')
   create(@Body() createSessionDto: CreateSessionDto) {
     return this.sessionService.create(createSessionDto);
   }
