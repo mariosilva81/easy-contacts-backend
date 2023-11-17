@@ -11,21 +11,21 @@ export class CreateContactDto {
   @IsNotEmpty()
   @MinLength(3)
   @MaxLength(50)
-  fullName: string;
+  fullName!: string;
 
   @IsString()
   @IsNotEmpty()
   @MaxLength(50)
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsString()
   @IsNotEmpty()
   @MinLength(11)
   @MaxLength(20)
-  phone: string;
+  phone!: string;
 
   @IsString()
   @IsNotEmpty()
-  clientId: string;
+  clientId!: string;
 }

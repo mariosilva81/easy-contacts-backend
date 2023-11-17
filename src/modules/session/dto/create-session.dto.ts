@@ -1,5 +1,3 @@
-import { hashSync } from 'bcryptjs';
-import { Transform } from 'class-transformer';
 import {
   IsEmail,
   IsNotEmpty,
@@ -9,13 +7,7 @@ import {
   MinLength,
 } from 'class-validator';
 
-export class CreateClientDto {
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(3)
-  @MaxLength(50)
-  fullName!: string;
-
+export class CreateSessionDto {
   @IsString()
   @IsNotEmpty()
   @MaxLength(50)
@@ -38,14 +30,5 @@ export class CreateClientDto {
   @Matches(/^(?=.*[!@#$%^&*()_+])/, {
     message: 'Password must contain at least one special character.',
   })
-  @Transform(({ value }: { value: string }) => hashSync(value), {
-    groups: ['transform'],
-  })
   password!: string;
-
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(11)
-  @MaxLength(20)
-  phone!: string;
 }
