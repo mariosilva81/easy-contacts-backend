@@ -83,15 +83,15 @@ export class ContactsService {
   }
 
   async remove(id: string) {
-    const findClient = await this.prisma.client.findUnique({
+    const findContact = await this.prisma.contact.findUnique({
       where: { id },
     });
 
-    if (!findClient) {
-      throw new NotFoundException('Client does not exists.');
+    if (!findContact) {
+      throw new NotFoundException('Contact does not exists.');
     }
 
-    await this.prisma.client.delete({
+    await this.prisma.contact.delete({
       where: { id },
     });
   }
