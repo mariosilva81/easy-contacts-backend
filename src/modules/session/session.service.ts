@@ -28,12 +28,20 @@ export class SessionService {
       throw new UnauthorizedException('Client credentials do not match.');
     }
 
-    const accessToken = this.jwt.sign({ sub: client.id });
+    const token = this.jwt.sign(
+      { sub: client.id },
+      { expiresIn: Number(process.env.JWT_EXPIRES_IN)! },
+    );
 
     const { id, full_name, phone } = client;
 
     return {
-      access_token: accessToken,
+      access_token: {
+        token,
+        message: `The generated token will expire in ${
+          Number(process.env.JWT_EXPIRES_IN) / 60 / 60
+        } hour(s)`,
+      },
       client: {
         id,
         full_name,

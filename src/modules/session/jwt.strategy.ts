@@ -8,7 +8,7 @@
 //     super({
 //       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 //       ignoreExpiration: false,
-//       secretOrKey: jwtConstants.secret,
+//       secretOrKey: process.env.JWT_SECRET_KEY!,
 //     });
 //   }
 
