@@ -11,7 +11,7 @@ export class CreateContactDto {
   @IsNotEmpty()
   @MinLength(3)
   @MaxLength(50)
-  fullName!: string;
+  full_name!: string;
 
   @IsString()
   @IsNotEmpty()
@@ -27,5 +27,5 @@ export class CreateContactDto {
 
   @IsString()
   @IsNotEmpty()
-  clientId!: string;
+  client_id!: string;
 }

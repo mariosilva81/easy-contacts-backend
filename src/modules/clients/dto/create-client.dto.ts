@@ -14,7 +14,7 @@ export class CreateClientDto {
   @IsNotEmpty()
   @MinLength(3)
   @MaxLength(50)
-  fullName!: string;
+  full_name!: string;
 
   @IsString()
   @IsNotEmpty()

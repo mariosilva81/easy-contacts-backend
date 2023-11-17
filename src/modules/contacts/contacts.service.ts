@@ -29,7 +29,7 @@ export class ContactsService {
     });
 
     await this.prisma.contact.create({
-      data: { ...contact, client_id: createContactDto.clientId },
+      data: { ...contact, client_id: createContactDto.client_id },
     });
 
     return plainToInstance(Contact, contact);
