@@ -36,7 +36,26 @@ export class ContactsService {
   }
 
   async findAll() {
-    const contacts = await this.prisma.contact.findMany();
+    const contacts = await this.prisma.contact.findMany({
+      select: {
+        id: true,
+        full_name: true,
+        email: true,
+        phone: true,
+        created_at: true,
+        updated_at: true,
+        client: {
+          select: {
+            id: true,
+            full_name: true,
+            email: true,
+            phone: true,
+            created_at: true,
+            updated_at: true,
+          },
+        },
+      },
+    });
 
     return plainToInstance(Contact, contacts);
   }
@@ -44,6 +63,24 @@ export class ContactsService {
   async findOne(id: string) {
     const findContact = await this.prisma.contact.findUnique({
       where: { id },
+      select: {
+        id: true,
+        full_name: true,
+        email: true,
+        phone: true,
+        created_at: true,
+        updated_at: true,
+        client: {
+          select: {
+            id: true,
+            full_name: true,
+            email: true,
+            phone: true,
+            created_at: true,
+            updated_at: true,
+          },
+        },
+      },
     });
 
     if (!findContact) {

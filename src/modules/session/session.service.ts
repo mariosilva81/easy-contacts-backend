@@ -32,6 +32,7 @@ export class SessionService {
 
     return {
       access_token: accessToken,
+      client: client,
     };
   }
 }

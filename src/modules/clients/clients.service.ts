@@ -36,7 +36,26 @@ export class ClientsService {
   }
 
   async findAll() {
-    const clients = await this.prisma.client.findMany();
+    const clients = await this.prisma.client.findMany({
+      select: {
+        id: true,
+        full_name: true,
+        email: true,
+        phone: true,
+        created_at: true,
+        updated_at: true,
+        contacts: {
+          select: {
+            id: true,
+            full_name: true,
+            email: true,
+            phone: true,
+            created_at: true,
+            updated_at: true,
+          },
+        },
+      },
+    });
 
     return plainToInstance(Client, clients);
   }
@@ -44,6 +63,24 @@ export class ClientsService {
   async findOne(id: string) {
     const findClient = await this.prisma.client.findUnique({
       where: { id },
+      select: {
+        id: true,
+        full_name: true,
+        email: true,
+        phone: true,
+        created_at: true,
+        updated_at: true,
+        contacts: {
+          select: {
+            id: true,
+            full_name: true,
+            email: true,
+            phone: true,
+            created_at: true,
+            updated_at: true,
+          },
+        },
+      },
     });
 
     if (!findClient) {

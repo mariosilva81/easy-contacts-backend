@@ -1,5 +1,4 @@
-import { Contact } from '@prisma/client';
-import { Exclude, Expose } from 'class-transformer';
+import { Exclude } from 'class-transformer';
 import { randomUUID } from 'node:crypto';
 
 export class Client {
