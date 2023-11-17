@@ -30,9 +30,16 @@ export class SessionService {
 
     const accessToken = this.jwt.sign({ sub: client.id });
 
+    const { id, full_name, phone } = client;
+
     return {
       access_token: accessToken,
-      client: client,
+      client: {
+        id,
+        full_name,
+        email,
+        phone,
+      },
     };
   }
 }
