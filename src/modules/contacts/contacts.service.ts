@@ -62,14 +62,16 @@ export class ContactsService {
       throw new NotFoundException('Contact does not exists.');
     }
 
-    const emailExists = await this.prisma.contact.findFirst({
-      where: { email: updateContactDto.email },
-    });
+    if (updateContactDto.email) {
+      const emailExists = await this.prisma.contact.findFirst({
+        where: { email: updateContactDto.email },
+      });
 
-    if (emailExists) {
-      throw new ConflictException(
-        'E-mail already registered for another contact.',
-      );
+      if (emailExists && emailExists.id !== id) {
+        throw new ConflictException(
+          'E-mail already registered for another contact.',
+        );
+      }
     }
 
     const updatedContact = await this.prisma.contact.update({
