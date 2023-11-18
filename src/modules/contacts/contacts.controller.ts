@@ -13,7 +13,9 @@ import { ContactsService } from './contacts.service';
 import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('contacts')
 @Controller('contacts')
 @UseGuards(AuthGuard('jwt'))
 export class ContactsController {

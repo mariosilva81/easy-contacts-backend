@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="100" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="50" alt="Nest Logo" /></a>
 </p>
 
 # Fullstack Project Back-end
@@ -24,7 +24,8 @@ Mario Silva
 <img src="https://www.postgresql.org/media/img/about/press/elephant.png" height="50" alt="PostgreSQL" style="margin-right: 10px;">
 <img src="https://cdn.icon-icons.com/icons2/2148/PNG/512/prisma_icon_132076.png" height="50" alt="Prisma" style="margin-right: 10px;">
 <img src="https://repository-images.githubusercontent.com/90088701/679a8000-614f-11e9-99a0-ef2c02a64695" height="50" alt="Bcrypt" style="margin-right: 10px;">
-<img src="https://jwt.io/img/pic_logo.svg" height="50" alt="JsonWebToken">
+<img src="https://jwt.io/img/pic_logo.svg" height="50" alt="JsonWebToken" style="margin-right: 10px;">
+<img src="https://static-00.iconduck.com/assets.00/swagger-icon-512x512-halz44im.png" height="50" alt="Swagger">
 
 ## Scripts
 
@@ -46,6 +47,7 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 - @nestjs/mapped-types: *
 - @nestjs/passport: ^10.0.2
 - @nestjs/platform-express: ^10.2.8
+- @nestjs/swagger: ^7.1.16
 - @prisma/client: ^5.6.0
 - bcryptjs: ^2.4.3
 - class-transformer: ^0.5.1
@@ -53,6 +55,7 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 - passport-jwt: ^4.0.1
 - reflect-metadata: ^0.1.13
 - rxjs: ^7.8.1
+- swagger-ui-express: ^5.0.0
 
 ## Dependências de Desenvolvimento
 
@@ -84,7 +87,7 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 
 ## Configuração do Ambiente
 
-Certifique-se de configurar as variáveis de ambiente necessárias no arquivo `.env` usando com base o `.env.example` localizado na raiz do projeto.
+Certifique-se de configurar as variáveis de ambiente necessárias no arquivo `.env`, usando com base o `.env.example`, localizado na raiz do projeto.
 
 ## Configuração do Banco de Dados PostgreSQL usando Prisma
 
@@ -110,7 +113,8 @@ Observação: A porta poderá ser diferente caso tenha configurado de outra form
 
 ## Estrutura do Projeto
 
-A estrutura foi toda baseada em NestJS e desenvolvida usando TypeScript e elementos de Programação Orientada a Objetos.
+A estrutura foi toda baseada em NestJS e desenvolvida com TypeScript e elementos de Programação Orientada a Objetos.
+Abaixo o detalhamento da estrutura:
 
 - `module`: tem a função de organizar e encapsular componentes relacionados, como controllers, services e providers.
 - `service`: responsável por executar interagir com o banco de dados e fornecer funcionalidades específicas para os controllers ou outros services.
@@ -134,7 +138,9 @@ A estrutura foi toda baseada em NestJS e desenvolvida usando TypeScript e elemen
 | DELETE | /contacts/:id  | Exclui um contato pelo ID          | Token de cliente    |
 | PATCH  | /contacts/:id  | Atualiza um contato pelo ID        | Token de cliente    |
 
-Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele estão contidas todas as rotas e métodos HTTP disponíveis na aplicação, para requisições local e deploy.
+Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele estão contidas todas as rotas e métodos HTTP disponíveis na aplicação, que pode ser importado no Insomnia ou qualquer outro client HTTP, para realizar requisições em ambiente local e/ou deploy.
+
+Para mais informações, consulte a documentação disponível em [http://localhost:3000/doc](http://localhost:3000/doc) 
 
 ## Deploy
 
