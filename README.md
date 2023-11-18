@@ -18,14 +18,14 @@ Mario Silva
 
 ## Tecnologias Utilizadas
 
-<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" height="50" alt="Node.js" style="margin-right: 10px;">
-<img src="https://nestjs.com/img/logo_text.svg" height="50" alt="NestJS" style="margin-right: 10px;">
-<img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" height="50" alt="Typescript" style="margin-right: 10px;">
-<img src="https://www.postgresql.org/media/img/about/press/elephant.png" height="50" alt="PostgreSQL" style="margin-right: 10px;">
-<img src="https://cdn.icon-icons.com/icons2/2148/PNG/512/prisma_icon_132076.png" height="50" alt="Prisma" style="margin-right: 10px;">
-<img src="https://repository-images.githubusercontent.com/90088701/679a8000-614f-11e9-99a0-ef2c02a64695" height="50" alt="Bcrypt" style="margin-right: 10px;">
-<img src="https://jwt.io/img/pic_logo.svg" height="50" alt="JsonWebToken" style="margin-right: 10px;">
-<img src="https://static-00.iconduck.com/assets.00/swagger-icon-512x512-halz44im.png" height="50" alt="Swagger">
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" height="50" alt="Node.js" style="margin-right: 10px; display: inline-block;">
+<img src="https://nestjs.com/img/logo_text.svg" height="50" alt="NestJS" style="margin-right: 10px; display: inline-block;">
+<img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" height="50" alt="Typescript" style="margin-right: 10px; display: inline-block;">
+<img src="https://www.postgresql.org/media/img/about/press/elephant.png" height="50" alt="PostgreSQL" style="margin-right: 10px; display: inline-block;">
+<img src="https://cdn.icon-icons.com/icons2/2148/PNG/512/prisma_icon_132076.png" height="50" alt="Prisma" style="margin-right: 10px; display: inline-block;">
+<img src="https://repository-images.githubusercontent.com/90088701/679a8000-614f-11e9-99a0-ef2c02a64695" height="50" alt="Bcrypt" style="margin-right: 10px; display: inline-block;">
+<img src="https://jwt.io/img/pic_logo.svg" height="50" alt="JsonWebToken" style="margin-right: 10px; display: inline-block;">
+<img src="https://static-00.iconduck.com/assets.00/swagger-icon-512x512-halz44im.png" height="50" alt="Swagger" style="display: inline-block;">
 
 ## Scripts
 
