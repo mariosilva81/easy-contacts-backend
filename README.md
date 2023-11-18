@@ -84,7 +84,7 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 
 ## Instalação
 
-1. Clone o repositório: `git clone https://github.com/seu-usuario/m6-fullstack-project-backend.git`
+1. Clone o repositório: `git clone git@github.com:mariosilva81/m6-fullstack-project-backend.git`
 2. Instale as dependências: `npm install` ou `yarn install`
 
 ## Configuração do Ambiente
