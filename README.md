@@ -16,6 +16,16 @@ Mario Silva
 
 1.0.0
 
+## Tecnologias Utilizadas
+
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" height="50" alt="Node.js" style="margin-right: 10px;">
+<img src="https://nestjs.com/img/logo_text.svg" height="50" alt="NestJS" style="margin-right: 10px;">
+<img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" height="50" alt="Typescript" style="margin-right: 10px;">
+<img src="https://www.postgresql.org/media/img/about/press/elephant.png" height="50" alt="PostgreSQL" style="margin-right: 10px;">
+<img src="https://cdn.icon-icons.com/icons2/2148/PNG/512/prisma_icon_132076.png" height="50" alt="Prisma" style="margin-right: 10px;">
+<img src="https://repository-images.githubusercontent.com/90088701/679a8000-614f-11e9-99a0-ef2c02a64695" height="50" alt="Bcrypt" style="margin-right: 10px;">
+<img src="https://jwt.io/img/pic_logo.svg" height="50" alt="JsonWebToken">
+
 ## Scripts
 
 - `build`: Compilação do projeto Nest.js.
@@ -100,7 +110,7 @@ Observação: A porta poderá ser diferente caso tenha configurado de outra form
 
 ## Estrutura do Projeto
 
-A estrutura (vide abaixo) foi toda baseada em NestJS. Foi desenvolvida usando TypeScript e elementos de Programação Orientada a Objetos.
+A estrutura foi toda baseada em NestJS e desenvolvida usando TypeScript e elementos de Programação Orientada a Objetos.
 
 - `module`: tem a função de organizar e encapsular componentes relacionados, como controllers, services e providers.
 - `service`: responsável por executar interagir com o banco de dados e fornecer funcionalidades específicas para os controllers ou outros services.
@@ -110,12 +120,26 @@ A estrutura (vide abaixo) foi toda baseada em NestJS. Foi desenvolvida usando Ty
 
 ## Endpoints
 
-- `/session/login`: Endpoint para realizar o login e obter token de acesso.
-- `/clients`: Endpoint para obter a lista de clientes (rota autenticada, exceto para criação de clientes).
-- `/contacts`: Endpoint para obter a lista de contatos (rota autenticada).
+|`Método`| `Endpoint`     | `Responsabilidade`                 | `Autenticação`      |
+| ------ | -------------- | ---------------------------------- | ------------------- |
+| POST   | /session/login | Gera o token de autenticação       | Não necessita token |
+| POST   | /clients       | Criação de cliente                 | Não necessita token |
+| GET    | /clients       | Lista todos os clientes            | Token de cliente    |
+| GET    | /clients/:id   | Lista um cliente pelo ID           | Token de cliente    |
+| PATCH  | /clients/:id   | Atualiza um cliente pelo ID        | Token de cliente    |
+| DELETE | /clients/:id   | Exclui um cliente pelo ID          | Token de cliente    |
+| POST   | /contacts      | Criação de contato                 | Token de cliente    |
+| GET    | /contacts      | Lista todos contatos os do cliente | Token de cliente    |
+| GET    | /contacts/:id  | Lista um contato pelo ID           | Token de cliente    |
+| DELETE | /contacts/:id  | Exclui um contato pelo ID          | Token de cliente    |
+| PATCH  | /contacts/:id  | Atualiza um contato pelo ID        | Token de cliente    |
 
 Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele estão contidas todas as rotas e métodos HTTP disponíveis na aplicação, para requisições local e deploy.
 
+## Deploy
+
+https://fullstack-project-eh5a.onrender.com
+
 ## Contato
 
-Para questões ou sugestões, entre em contato através do email mariosilva.81@icloud.com.
+Para questões ou sugestões, entre em contato através do email: mariosilva.81@icloud.com.
