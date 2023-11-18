@@ -1,38 +1,88 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="100" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Fullstack Project Back-end
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Descrição
 
-## Description
+Backend em NestJS para cadastro de clientes com vínculo de contatos.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Autor
 
-## Installation
+Mario Silva
 
-```bash
-$ npm install
-```
+## Versão
 
-## Running the app
+1.0.0
+
+## Scripts
+
+- `build`: Compilação do projeto Nest.js.
+- `format`: Formatação do código usando Prettier.
+- `start`: Inicia o servidor Nest.js.
+- `start:dev`: Inicia o servidor em modo de desenvolvimento com monitoramento de alterações.
+- `start:debug`: Inicia o servidor em modo de depuração com monitoramento de alterações.
+- `start:prod`: Inicia o servidor em modo de produção.
+- `lint`: Executa o ESLint para linting e correção automática.
+
+Execute os scripts utilizando `npm run` ou `yarn run`.
+
+## Dependências
+
+- @nestjs/common: ^10.0.0
+- @nestjs/core: ^10.0.0
+- @nestjs/jwt: ^10.2.0
+- @nestjs/mapped-types: *
+- @nestjs/passport: ^10.0.2
+- @nestjs/platform-express: ^10.2.8
+- @prisma/client: ^5.6.0
+- bcryptjs: ^2.4.3
+- class-transformer: ^0.5.1
+- class-validator: ^0.14.0
+- passport-jwt: ^4.0.1
+- reflect-metadata: ^0.1.13
+- rxjs: ^7.8.1
+
+## Dependências de Desenvolvimento
+
+- @nestjs/cli: ^10.0.0
+- @nestjs/schematics: ^10.0.0
+- @types/bcryptjs: ^2.4.6
+- @types/express: ^4.17.17
+- @types/node: ^20.3.1
+- @types/passport-jwt: ^3.0.13
+- @types/supertest: ^2.0.12
+- @typescript-eslint/eslint-plugin: ^6.0.0
+- @typescript-eslint/parser: ^6.0.0
+- eslint: ^8.42.0
+- eslint-config-prettier: ^9.0.0
+- eslint-plugin-prettier: ^5.0.0
+- prettier: ^3.0.0
+- prisma: ^5.6.0
+- source-map-support: ^0.5.21
+- supertest: ^6.3.3
+- ts-loader: ^9.4.3
+- ts-node: ^10.9.1
+- tsconfig-paths: ^4.2.0
+- typescript: ^5.1.3
+
+## Instalação
+
+1. Clone o repositório: `git clone https://github.com/seu-usuario/m6-fullstack-project-backend.git`
+2. Instale as dependências: `npm install` ou `yarn install`
+
+## Configuração do Ambiente
+
+Certifique-se de configurar as variáveis de ambiente necessárias no arquivo `.env` usando com base o `.env.example` localizado na raiz do projeto.
+
+## Configuração do Banco de Dados PostgreSQL usando Prisma
+
+Execute as migrações do Prisma: `npx prisma migrate dev`
+
+## Executando o Projeto
+
+Execute o seguinte comando para iniciar o servidor:
 
 ```bash
 # development
@@ -45,29 +95,27 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+O servidor local estará acessível em [http://localhost:3000](http://localhost:3000). 
+Observação: A porta poderá ser diferente caso tenha configurado de outra forma no `.env`.
 
-```bash
-# unit tests
-$ npm run test
+## Estrutura do Projeto
 
-# e2e tests
-$ npm run test:e2e
+A estrutura (vide abaixo) foi toda baseada em NestJS. Foi desenvolvida usando TypeScript e elementos de Programação Orientada a Objetos.
 
-# test coverage
-$ npm run test:cov
-```
+- `module`: tem a função de organizar e encapsular componentes relacionados, como controllers, services e providers.
+- `service`: responsável por executar interagir com o banco de dados e fornecer funcionalidades específicas para os controllers ou outros services.
+- `controller`: responsável ​​por lidar com a entrada de solicitações do cliente, como GET, POST, PATCH e DELETE.
+- `entity`: refere-se ao modelo de dados que representa as tabelas do banco de dados. 
+- `dto`: tem como objetivo transferir dados entre os controllers e os services.
 
-## Support
+## Endpoints
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- `/session/login`: Endpoint para realizar o login e obter token de acesso.
+- `/clients`: Endpoint para obter a lista de clientes (rota autenticada, exceto para criação de clientes).
+- `/contacts`: Endpoint para obter a lista de contatos (rota autenticada).
 
-## Stay in touch
+Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele estão contidas todas as rotas e métodos HTTP disponíveis na aplicação, para requisições local e deploy.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Contato
 
-## License
-
-Nest is [MIT licensed](LICENSE).
+Para questões ou sugestões, entre em contato através do email mariosilva.81@icloud.com.
