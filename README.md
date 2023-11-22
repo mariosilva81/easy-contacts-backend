@@ -144,10 +144,6 @@ Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele est
 
 Para mais informações, consulte a documentação disponível em [http://localhost:3000/doc](http://localhost:3000/doc) 
 
-## Deploy
-
-https://fullstack-project-eh5a.onrender.com
-
 ## Contato
 
 Para questões ou sugestões, entre em contato através do email: mariosilva.81@icloud.com.
