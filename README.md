@@ -84,16 +84,78 @@ Execute os scripts utilizando `npm run` ou `yarn run`.
 
 ## Instalação
 
-1. Clone o repositório: `git clone git@github.com:mariosilva81/m6-fullstack-project-backend.git`
-2. Instale as dependências: `npm install` ou `yarn install`
+1. Clone o repositório: 
+
+```bash
+git clone git@github.com:mariosilva81/m6-fullstack-project-backend.git
+```
+
+2. Instale as dependências: 
+
+```bash
+npm install 
+
+ou 
+
+yarn install
+```
 
 ## Configuração do Ambiente
 
 Certifique-se de configurar as variáveis de ambiente necessárias no arquivo `.env`, usando com base o `.env.example`, localizado na raiz do projeto.
 
-## Configuração do Banco de Dados PostgreSQL usando Prisma
+## Configuração do Banco de Dados
 
-Execute as migrações do Prisma: `npx prisma migrate dev`
+1. Instalação do PostgreSQL
+
+Certifique-se de ter o PostgreSQL instalado em seu sistema. Você pode baixá-lo em [https://www.postgresql.org/download/](https://www.postgresql.org/download/).
+
+2. Inicialização do Serviço
+
+Após a instalação, inicie o serviço do PostgreSQL. Os comandos podem variar de acordo com o sistema operacional, mas geralmente incluem:
+
+- **Linux:**
+
+```bash
+sudo service postgresql start
+```
+
+- **Windows:**
+
+Vá para o "Painel de Controle" > "Ferramentas Administrativas" > "Serviços".
+Localize o serviço PostgreSQL e inicie-o.
+
+- **MacOS:**
+
+```bash
+pg_ctl -D /usr/local/var/postgres start
+```
+
+3. Acesso ao Banco de Dados
+
+Por padrão, o PostgreSQL cria um banco de dados chamado postgres. Você pode acessá-lo usando o utilitário psql no terminal:
+
+```bash
+psql -U postgres
+```
+
+Isso abrirá uma sessão interativa com o banco de dados postgres usando o usuário postgres. Você pode ser solicitado a fornecer a senha.
+
+4. Criar um Novo Banco de Dados
+
+Dentro do shell psql, execute o seguinte comando para criar um novo banco de dados:
+
+```bash
+CREATE DATABASE nome_do_banco_de_dados;
+```
+
+Substitua `nome_do_banco_de_dados` pelo nome desejado para o seu banco de dados.
+
+5. Execute as migrações do Prisma
+
+```bash
+npx prisma migrate dev
+```
 
 ## Executando o Projeto
 
@@ -140,7 +202,7 @@ Abaixo o detalhamento da estrutura:
 | DELETE | /contacts/:id  | Exclui um contato pelo ID          | Token de cliente    |
 | PATCH  | /contacts/:id  | Atualiza um contato pelo ID        | Token de cliente    |
 
-Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele estão contidas todas as rotas e métodos HTTP disponíveis na aplicação, que pode ser importado no Insomnia ou qualquer outro client HTTP, para realizar requisições em ambiente local e/ou deploy.
+Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele estão contidas todas as rotas e métodos HTTP disponíveis na aplicação, que pode ser importado no Insomnia ou qualquer outro client HTTP, para realizar requisições.
 
 Para mais informações, consulte a documentação disponível em [http://localhost:3000/doc](http://localhost:3000/doc) 
 
