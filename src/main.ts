@@ -15,7 +15,7 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: 'https://easy-contacts-tan.vercel.app/',
+    origin: 'https://easy-contacts-tan.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
@@ -35,7 +35,7 @@ async function bootstrap() {
 
   SwaggerModule.setup('doc', app, document);
 
-  const port = Number(process.env.PORT) | 3000;
+  const port = Number(process.env.PORT) || 3001;
 
   await app.listen(port);
 }
