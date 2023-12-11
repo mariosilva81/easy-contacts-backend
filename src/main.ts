@@ -21,9 +21,9 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('Fullstack Project Back-end')
+    .setTitle('Easy Contacts Back-end')
     .setDescription(
-      'Backend em NestJS para cadastro de clientes com vínculo de contatos.',
+      'Back-end em NestJS para cadastro de clientes com vínculo de contatos.',
     )
     .setVersion('1.0.0')
     .addTag('login')

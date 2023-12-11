@@ -204,11 +204,11 @@ Abaixo o detalhamento da estrutura:
 
 Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele estão contidas todas as rotas e métodos HTTP disponíveis na aplicação, que pode ser importado no Insomnia ou qualquer outro client HTTP, para realizar requisições.
 
-Para mais informações, consulte a documentação disponível em [http://localhost:3000/doc](http://localhost:3000/doc) ou em [https://fullstack-backend-3d2r.onrender.com/doc](https://fullstack-backend-3d2r.onrender.com/doc).
+Para mais informações, consulte a documentação disponível em [http://localhost:3000/doc](http://localhost:3000/doc) ou em [https://easy-contacts-svuu.onrender.com/doc](https://easy-contacts-svuu.onrender.com/doc).
 
 ## Deploy
 
-Caso queira testar a aplicação em produção, a mesma está disponível em [https://fullstack-backend-3d2r.onrender.com](https://fullstack-backend-3d2r.onrender.com).
+Caso queira testar a aplicação em produção, a mesma está disponível em [https://easy-contacts-svuu.onrender.com](https://easy-contacts-svuu.onrender.com).
 
 ## Contato
 
